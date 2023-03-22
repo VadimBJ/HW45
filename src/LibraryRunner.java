@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,17 +11,14 @@ public class LibraryRunner {
     System.out.println("\u001B[34m\n .... сортировка ..... \u001B[0m");
     Collections.sort(bookList);
     bookPrint(bookList);
-
-
   }
 
   public static void bookPrint(List<Book> bookList) {
     System.out.println("Доступные книги:");
     for (int i = 0; i < bookList.size(); i++) {
-      System.out.printf("%2d. %s",(i + 1), bookList.get(i));
+      System.out.printf("%2d. %s", (i + 1), bookList.get(i));
     }
   }
-
 
   public static List<Book> readFile(File inputFile) throws IOException {
     List<Book> bookList = new ArrayList<>();
