@@ -12,9 +12,7 @@ public class Book implements Comparable<Book> {
   @Override
   public String toString() {
     return String.format("""
-        Книга: %s
-        Автор: %s
-        Количество страниц: %d""", title,author,sheets);
+        \"%s\"  %s (%d стр.)%n""", title,author,sheets);
   }
 
   @Override
