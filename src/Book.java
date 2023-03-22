@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book implements Comparable<Book> {
   private String title;
   private String author;
@@ -11,15 +13,38 @@ public class Book implements Comparable<Book> {
 
   @Override
   public String toString() {
-    return String.format("""
-        \"%s\"  %s (%d стр.)%n""", title,author,sheets);
+    return String.format("%s \"%s\" (%d стр.)%n", author, title, sheets);
   }
 
   @Override
   public int compareTo(Book other) {
-    if (this.author != other.author) {
+    if (!Objects.equals(this.author, other.author)) {
       return this.author.compareTo(other.author);
     }
     return this.title.compareTo(other.title);
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setAuthor(String author) {
+    this.author = author;
+  }
+
+  public void setSheets(int sheets) {
+    this.sheets = sheets;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getAuthor() {
+    return author;
+  }
+
+  public int getSheets() {
+    return sheets;
   }
 }
