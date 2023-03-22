@@ -8,8 +8,14 @@ public class LibraryRunner {
     File inputFile = new File("res/books.csv");
     List<Book> bookList = readFile(inputFile);
     bookPrint(bookList);
-    System.out.println("\u001B[34m\n .... сортировка ..... \u001B[0m");
+    System.out.println("\u001B[34m\n .... обычная сортировка ..... \u001B[0m");
     Collections.sort(bookList);
+    bookPrint(bookList);
+    System.out.println("\u001B[34m\n .... сортировка по названию ..... \u001B[0m");
+    bookList.sort(new BookTitleComparator());
+    bookPrint(bookList);
+    System.out.println("\u001B[34m\n ... сортировка по убыванию количества страниц ... \u001B[0m");
+    bookList.sort(new BookSheetsComparator());
     bookPrint(bookList);
   }
 
