@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,7 +25,7 @@ public class LibraryRunner {
   public static void bookPrint(List<Book> bookList) {
     System.out.println("Доступные книги:");
     for (int i = 0; i < bookList.size(); i++) {
-      System.out.printf("%2d. %s", (i + 1), bookList.get(i));
+      System.out.printf("%2d. %s%n", (i + 1), bookList.get(i));
     }
   }
 
